@@ -1,21 +1,5 @@
 node {
   stage ('hello') {
-      echo "Hello"
+      echo "dev"
   }
-  stage('test') {
-            when {
-                branch 'master'
-            }
-            steps {
-                echo "master" 
-            }
-        }
-    stage('test') {
-            when {
-                branch 'dev'
-            }
-            steps {
-                echo "dev" 
-            }
-        }
 }
