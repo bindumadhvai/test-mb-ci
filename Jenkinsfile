@@ -7,7 +7,15 @@ node {
                 branch 'master'
             }
             steps {
-                echo "bye" 
+                echo "master" 
+            }
+        }
+    stage('test') {
+            when {
+                branch 'dev'
+            }
+            steps {
+                echo "dev" 
             }
         }
 }
