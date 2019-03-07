@@ -3,7 +3,7 @@ node {
       echo "master"
   }
   stage ('test') {
-      def userInput = input message: 'enter OK for deployment', ok: 'OK', parameters: [booleanParam(defaultValue: false, description: 'Cancel', name: 'Deploy')]
+      def userInput = input message: 'enter OK for deployment', ok: 'Yes', parameters: [booleanParam(defaultValue: false, description: '', name: 'Deploy')]
       echo ("deploy: "+userInput)
   }  
 }
