@@ -13,7 +13,7 @@ node {
   
   stage ('test') {
       if (env.BRANCH_NAME == 'master'){
-             echo 'run this stage - ony if the branch = master branch'
+             echo 'echo s3://$et'
              $execute = "true"
              echo $execute
       }
