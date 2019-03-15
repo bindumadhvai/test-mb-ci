@@ -1,7 +1,10 @@
 def execute = "false"
+def et = env.BRANCH_NAME
 node {
   stage ('hello') {
-      echo env.BRANCH_NAME
+      git branch: env.BRANCH_NAME, credentialsId: 'BitBucket', url: 'https://github.com/bindumadhvai/test-mb-ci.git'
+      echo et
+  }
   }
   
  /*   stage ('bye') {
