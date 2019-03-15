@@ -17,7 +17,7 @@ node {
       if (env.BRANCH_NAME == 'test'){
              echo 'run this stage - ony if the branch = test branch'
       }
-      if(env.BRANCH_NAME != /(dev|master|test)/) {
+      if(env.BRANCH_NAME !== /(dev|master|test)/) {
        echo "this is feature barcnh" 
       }
   }  
