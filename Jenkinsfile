@@ -16,11 +16,14 @@ node {
       }
       else if (env.BRANCH_NAME == 'dev') {
              echo 'run this stage - ony if the branch = dev branch'
+             $execute = "false"
       }
       else if (env.BRANCH_NAME == 'test'){
              echo 'run this stage - ony if the branch = test branch'
+             $execute = "false"
       } else {
-             echo "this is feature barcnh" 
+             echo "this is feature barcnh"
+             $execute = "false"
       }
   } 
   
