@@ -24,10 +24,10 @@ node {
       }
   } 
   
-  stage ('ex') {
-    if ($execute == "true") {
+  if ($execute == "true") {
+     stage ('ex') {
          echo "i am executed"
-    } else {
-    }
+     } 
   }
+  
 }
