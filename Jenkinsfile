@@ -17,7 +17,7 @@ node {
              echo $execute
       }
       else if (env.BRANCH_NAME == 'dev') {
-             ls -al | grep $et
+             sh ''' ls -al | grep $et '''
              echo 'run this stage - ony if the branch = dev branch'
              $execute = "true"
       }
