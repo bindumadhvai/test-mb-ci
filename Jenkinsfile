@@ -5,7 +5,7 @@ node {
       git branch: env.BRANCH_NAME, credentialsId: 'BitBucket', url: 'https://github.com/bindumadhvai/test-mb-ci.git'
       echo et
   }
-  }
+  
   
  /*   stage ('bye') {
       echo "NO master"
