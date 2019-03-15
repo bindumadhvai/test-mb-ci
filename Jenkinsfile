@@ -18,6 +18,7 @@ node {
              echo $execute
       }
       else if (env.BRANCH_NAME == 'dev') {
+             echo 'echo s3://$et'
              echo 'run this stage - ony if the branch = dev branch'
              $execute = "true"
       }
