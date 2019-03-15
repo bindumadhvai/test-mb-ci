@@ -8,23 +8,17 @@ node {
   }*/
   
   stage ('test') {
-      when{
-             branch 'master'
-      }
-      steps {
+      if (env.BRANCH_NAME == 'master'){
              echo 'run this stage - ony if the branch = master branch'
       }
-      when{
-             branch 'dev'
-      }
-      steps {
+      if (env.BRANCH_NAME == 'dev') {
              echo 'run this stage - ony if the branch = dev branch'
       }
-      when{
-             branch 'test'
-      }
-      steps {
+      if (env.BRANCH_NAME == 'test'){
              echo 'run this stage - ony if the branch = test branch'
+      }
+      else {
+       echo "this is feature barcnh" 
       }
   }  
 }
