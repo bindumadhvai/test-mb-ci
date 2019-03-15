@@ -27,6 +27,7 @@ node {
   stage ('ex') {
     if ($execute == "true") {
          echo "i am executed"
+    } else {
     }
   }
 }
