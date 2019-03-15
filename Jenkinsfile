@@ -1,5 +1,5 @@
 def execute = "false"
-def et = "frst"+ env.BRANCH_NAME
+def et = "test*"
 node {
   stage ('hello') {
       git credentialsId: 'BitBucket', url: 'https://github.com/bindumadhvai/test-mb-ci.git'
@@ -13,12 +13,11 @@ node {
   
   stage ('test') {
       if (env.BRANCH_NAME == 'master'){
-             echo 'echo s3://$et'
              $execute = "true"
              echo $execute
       }
       else if (env.BRANCH_NAME == 'dev') {
-             echo 'echo s3://$et'
+             ls -al | grep $et
              echo 'run this stage - ony if the branch = dev branch'
              $execute = "true"
       }
