@@ -1,6 +1,6 @@
 node {
   stage ('hello') {
-      echo "master"
+      echo $env.BRANCH_NAME
   }
   
  /*   stage ('bye') {
@@ -8,7 +8,23 @@ node {
   }*/
   
   stage ('test') {
-      def userInput = input message: 'enter OK for deployment', ok: 'Yes', parameters: [booleanParam(defaultValue: false, description: '', name: 'Deploy')]
-      echo ("deploy: "+userInput)
+      when{
+             branch 'master'
+      }
+      steps {
+             echo 'run this stage - ony if the branch = master branch'
+      }
+      when{
+             branch 'dev'
+      }
+      steps {
+             echo 'run this stage - ony if the branch = dev branch'
+      }
+      when{
+             branch 'test'
+      }
+      steps {
+             echo 'run this stage - ony if the branch = test branch'
+      }
   }  
 }
