@@ -1,5 +1,5 @@
 def execute = "false"
-def et = env.BRANCH_NAME
+def et = "frst"+ env.BRANCH_NAME
 node {
   stage ('hello') {
       git branch: env.BRANCH_NAME, credentialsId: 'BitBucket', url: 'https://github.com/bindumadhvai/test-mb-ci.git'
