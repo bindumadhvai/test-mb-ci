@@ -13,8 +13,8 @@ node {
   stage ('test') {
       if (env.BRANCH_NAME == 'master'){
         $text = "${text1}"
-        sh " ls -al ${text1} "
-             $execute = "true"
+        sh script : ''' ls -al ${text1} '''
+             execute = "true"
       }
       else if (env.BRANCH_NAME == 'dev') {
              echo 'run this stage - ony if the branch = dev branch'
@@ -27,7 +27,7 @@ node {
   } 
   
   stage ('ex') {
-    if ($execute == "true") {
+    if (execute == "true") {
          echo "i am executed"
     }
   }
