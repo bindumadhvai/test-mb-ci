@@ -1,4 +1,5 @@
 def execute = "false"
+def text = "/var/lib/jenkins"
 node {
   stage ('hello') {
       echo env.BRANCH_NAME
@@ -11,6 +12,7 @@ node {
   stage ('test') {
       if (env.BRANCH_NAME == 'master'){
              echo 'run this stage - ony if the branch = master branch'
+             sh : ''' ls -al $text'''
              $execute = "true"
              echo $execute
       }
