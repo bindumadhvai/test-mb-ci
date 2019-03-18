@@ -1,5 +1,5 @@
 def execute = "false"
-def text = "/var/lib/jenkins"
+def text1 = "/var/lib/jenkins"
 node {
   stage ('hello') {
       echo env.BRANCH_NAME
@@ -11,7 +11,7 @@ node {
   
   stage ('test') {
       if (env.BRANCH_NAME == 'master'){
-             $text = "/var/lib/jenkins"
+             $text = text1
              sh " ls -al $text "
              $execute = "true"
       }
