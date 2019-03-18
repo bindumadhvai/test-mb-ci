@@ -11,10 +11,8 @@ node {
   
   stage ('test') {
       if (env.BRANCH_NAME == 'master'){
-             echo 'run this stage - ony if the branch = master branch'
-             sh : ''' ls -al $text'''
+             sh script : ''' ls -al $text'''
              $execute = "true"
-             echo $execute
       }
       else if (env.BRANCH_NAME == 'dev') {
              echo 'run this stage - ony if the branch = dev branch'
