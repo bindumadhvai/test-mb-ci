@@ -11,6 +11,7 @@ node {
   
   stage ('test') {
       if (env.BRANCH_NAME == 'master'){
+             $text = "/var/lib/jenkins"
              sh " ls -al $text "
              $execute = "true"
       }
