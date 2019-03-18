@@ -3,6 +3,7 @@ def text1 = "/var/lib/jenkins"
 node {
   stage ('hello') {
       echo env.BRANCH_NAME
+      text1 = "/var/lib"
   }
   
  /*   stage ('bye') {
