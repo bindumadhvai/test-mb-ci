@@ -13,7 +13,8 @@ node {
   stage ('test') {
       if (env.BRANCH_NAME == 'master'){
         $text = "${text1}"
-        sh script : """ ls -al ${text1} """
+        sh script : """ ls -al ${text1} 
+         echo ${env.BRANCH_NAME}"""
              execute = "true"
       }
       else if (env.BRANCH_NAME == 'dev') {
