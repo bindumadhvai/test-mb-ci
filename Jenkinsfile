@@ -18,7 +18,7 @@ node {
              execute = "true"
       }
       else if (env.BRANCH_NAME == 'dev') {
-             echo 'run this stage - ony if the branch = dev branch'
+             echo 'run this stage - ony if the branch'
       }
       else if (env.BRANCH_NAME == 'test'){
              echo 'run this stage - ony if the branch = test branch'
