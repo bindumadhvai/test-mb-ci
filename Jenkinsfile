@@ -1,6 +1,7 @@
 def execute = "false"
 def et = "test*"
 node {
+  properties([disableConcurrentBuilds()])
   stage ('hello') {
       git credentialsId: 'BitBucket', url: 'https://github.com/bindumadhvai/test-mb-ci.git'
       echo et
