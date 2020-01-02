@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('1') {
+        stage('2') {
             steps {
                 println("Hello")
             }
