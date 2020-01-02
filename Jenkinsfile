@@ -1,7 +1,7 @@
 pipeline {
     agent any
     options {
-        quietPeriod 120
+        quietPeriod 1200
         buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
     }
     stages {
